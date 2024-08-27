@@ -44,6 +44,7 @@ This project relies on the following dependencies:
 2. **Interact with the List**:
 
    - **items**: This is an array of items to be displayed. Each item should include properties like `subheading`, `title`, `subtitle`, and `thumbnail`. Example:
+
      ```tsx
      items={[
        {
@@ -56,11 +57,13 @@ This project relies on the following dependencies:
      ```
 
    - **buttonText**: The text displayed on the button for each item. Example:
+
      ```tsx
-     buttonText="Follow"
+     buttonText = "Follow";
      ```
 
    - **buttonAction**: A function to be executed when the button is clicked. Example:
+
      ```tsx
      buttonAction={() => console.log("Button clicked")}
      ```
@@ -70,6 +73,8 @@ This project relies on the following dependencies:
    Here’s how you can use the `RecommendedList` component:
 
    ```tsx
+   import { RecommendedList } from "./components/RecommendedList";
+
    <RecommendedList
      items={[
        {
@@ -81,12 +86,11 @@ This project relies on the following dependencies:
      ]}
      buttonText="Follow"
      buttonAction={() => console.log("Button clicked")}
-   />
+   />;
    ```
-
 
 ## Example
 
 Here’s an example of how the component looks:
 
-![Recommended List App Screenshot](public/imgs/sample.png)
+![Recommended List App Screenshot](https://raw.githubusercontent.com/KayviaHarriott/react-vite-recommended-lists/main/public/imgs/sample.png)
