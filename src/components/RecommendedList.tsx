@@ -15,12 +15,16 @@ interface RecommendedListProps {
 export const RecommendedList: React.FC<RecommendedListProps> = ({
   items,
   buttonText,
-  buttonAction
+  buttonAction,
 }) => {
   const [updatedItems, setItems] = useState(items);
 
   const handleRemove = (index: number) => {
-    console.log("here")
+    setItems(updatedItems.filter((_: unknown, i: number) => i !== index));
+  };
+
+  const handleButtonAction = (index: number) => {
+    buttonAction();
     setItems(updatedItems.filter((_: unknown, i: number) => i !== index));
   };
 
@@ -38,7 +42,7 @@ export const RecommendedList: React.FC<RecommendedListProps> = ({
                 thumbnail={item.thumbnail}
                 index={index}
                 onRemove={() => handleRemove(index)} // Pass handler
-                onAction={buttonAction}
+                onAction={() => handleButtonAction(index)}
               />
             </div>
           )

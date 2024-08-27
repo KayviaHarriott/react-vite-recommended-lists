@@ -62,7 +62,7 @@ export const ItemBox: React.FC<ItemBoxProps> = ({
                   height: "fit-content",
                   fontSize: "14px",
                   padding: "4px 16px",
-                  backgroundColor: "black",
+                  backgroundColor: "#37ABEB",
                   color: "white",
                 }}
                 variant="contained"
@@ -74,6 +74,7 @@ export const ItemBox: React.FC<ItemBoxProps> = ({
             <div className="mt-[-5%]">
               <CloseIcon
                 sx={{ color: "#999999", width: "16px", height: "16px" }}
+                className="cursor-pointer"
                 onClick={onRemove}
               />
             </div>
