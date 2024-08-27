@@ -1,14 +1,14 @@
 import { Box, Button } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import Skeleton from '@mui/material/Skeleton';
+// import Skeleton from "@mui/material/Skeleton";
 
 interface ItemBoxProps {
-  subheading: string;
+  subheading?: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   buttonText: string;
   index: number;
-  thumbnail: string;
+  thumbnail?: string;
   onRemove: () => void;
   onAction: () => void;
 }
@@ -21,8 +21,9 @@ export const ItemBox: React.FC<ItemBoxProps> = ({
   index,
   thumbnail,
   onRemove,
-  onAction
+  onAction,
 }) => {
+
   return (
     <div>
       <Box
@@ -37,19 +38,22 @@ export const ItemBox: React.FC<ItemBoxProps> = ({
       >
         <div className="flex justify-between">
           <div className="flex gap-[12px] items-center">
-            {thumbnail ? (
+            {thumbnail && (
               <img
                 className=" w-[70px] h-[70px] rounded-[5px]"
                 src={thumbnail}
               />
-            ) : (
-                <Skeleton variant="rounded" width={70} height={70} />
-            )}
+            ) 
+            // : (
+            //   <Skeleton variant="rounded" width={70} height={70} />
+            // )
+            
+            }
             <div>
-              <h6 className="text-[#6F6F6F]">{subheading}</h6>
+              {subheading && <h6 className="text-[#6F6F6F]">{subheading}</h6>}
               <div className="pt-1">
                 <h4 className="font-bold">{title}</h4>
-                <h6 className="text-[#6F6F6F]">{subtitle}</h6>
+                {subtitle && <h6 className="text-[#6F6F6F]">{subtitle}</h6>}
               </div>
             </div>
           </div>
