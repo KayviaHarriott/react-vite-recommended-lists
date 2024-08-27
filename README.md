@@ -97,4 +97,4 @@ This project relies on the following dependencies:
 
 Here’s an example of how the component looks:
 
-![Recommended List App Screenshot](https://raw.githubusercontent.com/KayviaHarriott/react-vite-recommended-lists/main/public/imgs/sample.png)
+![Recommended List App Screenshot](https://raw.githubusercontent.com/KayviaHarriott/react-vite-recommended-lists/main/public/imgs/sample.gif)
