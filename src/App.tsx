@@ -48,8 +48,6 @@ function App() {
     },
   ]);
 
-  console.log("Page loaded")
-
   return (
     <>
       <div className="p-8 w-[500px]">
