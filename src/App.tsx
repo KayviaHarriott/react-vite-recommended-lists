@@ -52,7 +52,7 @@ function App() {
 
   return (
     <>
-      <div className="p-8">
+      <div className="p-8 w-[500px]">
         <p className="font-bold pb-4">Recommended List</p>
         <RecommendedList
           items={list}

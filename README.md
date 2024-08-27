@@ -1,50 +1,92 @@
-# React + TypeScript + Vite
+# react-vite-recommended-lists
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How to Install
 
-Currently, two official plugins are available:
+The Recommended List App is a React application designed to display a list of items with interactive components. Each item is displayed in a card format, featuring a thumbnail image, a title, subtitle, and a button to perform an action. Users can also remove items from the list. This app showcases the use of React hooks, Material-UI components, and basic state management.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to Start Up
 
-## Expanding the ESLint configuration
+To get started with this project, follow these steps:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the Repository**:
 
-- Configure the top-level `parserOptions` property like this:
+   ```
+   git clone https://github.com/KayviaHarriott/react-vite-recommended-lists.git
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. **Install Dependencies**:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   ```
+   npm install
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+3. **Start the Development Server**:
+   ```
+   npm run dev
+   ```
+   This will start the development server and open the app in your default browser.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Dependencies
+
+This project relies on the following dependencies:
+
+- **React**: A JavaScript library for building user interfaces.
+- **Material-UI**: A popular React UI framework that provides pre-built components.
+- **TypeScript** (if used): A superset of JavaScript that adds static typing.
+- **@mui/material**: Material-UI core components.
+- **@mui/icons-material**: Material-UI icons.
+
+## Usage
+
+1. **Run the Application**:
+   After starting the development server, the application will be available at `http://localhost:5173`.
+
+2. **Interact with the List**:
+
+   - **items**: This is an array of items to be displayed. Each item should include properties like `subheading`, `title`, `subtitle`, and `thumbnail`. Example:
+     ```tsx
+     items={[
+       {
+         subheading: "Travel",
+         title: "#Wanderlust",
+         subtitle: "22.7K posts",
+         thumbnail: "imgs/thumbnails/travel.png",
+       },
+     ]}
+     ```
+
+   - **buttonText**: The text displayed on the button for each item. Example:
+     ```tsx
+     buttonText="Follow"
+     ```
+
+   - **buttonAction**: A function to be executed when the button is clicked. Example:
+     ```tsx
+     buttonAction={() => console.log("Button clicked")}
+     ```
+
+   - **Remove Action**: Click the close icon to remove an item from the list.
+
+   Here’s how you can use the `RecommendedList` component:
+
+   ```tsx
+   <RecommendedList
+     items={[
+       {
+         subheading: "Travel", //string
+         title: "#Wanderlust", //string
+         subtitle: "22.7K posts", //string
+         thumbnail: "imgs/thumbnails/travel.png", //string, location to image
+       },
+     ]}
+     buttonText="Follow"
+     buttonAction={() => console.log("Button clicked")}
+   />
+   ```
+
+
+## Example
+
+Here’s an example of how the component looks:
+
+![Recommended List App Screenshot](public/imgs/sample.png)
