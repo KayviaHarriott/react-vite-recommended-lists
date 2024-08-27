@@ -4,6 +4,10 @@
 
 The Recommended List App is a React application designed to display a list of items with interactive components. Each item is displayed in a card format, featuring a thumbnail image, a title, subtitle, and a button to perform an action. Users can also remove items from the list. This app showcases the use of React hooks, Material-UI components, and basic state management.
 
+## Demo
+
+View demo [here](https://react-vite-recommended-lists.netlify.app).
+
 ## How to Start Up
 
 To get started with this project, follow these steps:
