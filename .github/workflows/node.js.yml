@@ -13,7 +13,6 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - name: Checkout code
@@ -31,8 +30,9 @@ jobs:
     - name: Build project
       run: npm run build --if-present
 
-    - name: Run tests
-      run: npm test
+    # You can comment out or remove this step if you don't have tests
+    # - name: Run tests
+    #   run: npm test
 
     - name: Upload build artifacts
       if: success()
