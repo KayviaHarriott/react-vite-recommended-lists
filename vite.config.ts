@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   build: {
     outDir: 'dist',
+    emptyOutDir: false,
     lib: {
       entry: 'src/index.ts',
       name: 'RecommendedLists',
