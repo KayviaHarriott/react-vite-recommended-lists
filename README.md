@@ -77,6 +77,7 @@ This project relies on the following dependencies:
    Here’s how you can use the `RecommendedList` component:
 
    ```tsx
+   "use client" //for NextJs
    import { RecommendedList } from "./components/RecommendedList";
 
    <RecommendedList

@@ -1,6 +1,7 @@
 import { Box, Button } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-// import Skeleton from "@mui/material/Skeleton";
+import React from "react";
+import Skeleton from "@mui/material/Skeleton";
+import { IoClose } from "react-icons/io5";
 
 interface ItemBoxProps {
   subheading?: string;
@@ -10,7 +11,7 @@ interface ItemBoxProps {
   index: number;
   thumbnail?: string;
   onRemove: () => void;
-  onAction: () => void;
+  onAction?: () => void;
 }
 
 export const ItemBox: React.FC<ItemBoxProps> = ({
@@ -23,7 +24,6 @@ export const ItemBox: React.FC<ItemBoxProps> = ({
   onRemove,
   onAction,
 }) => {
-
   return (
     <div>
       <Box
@@ -36,29 +36,43 @@ export const ItemBox: React.FC<ItemBoxProps> = ({
             "",
         }}
       >
-        <div className="flex justify-between">
-          <div className="flex gap-[12px] items-center">
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Box
+            sx={{
+              display: "flex",
+              gap: "12px",
+              alignItems: "center",
+            }}
+          >
             {thumbnail && (
-              <img
-                className=" w-[70px] h-[70px] rounded-[5px]"
-                src={thumbnail}
-              />
-            ) 
-            // : (
-            //   <Skeleton variant="rounded" width={70} height={70} />
-            // )
-            
-            }
+              <Box sx={{ width: "70px", height: "70px" }}>
+                <img
+                  src={thumbnail}
+                  alt="text"
+                  style={{ borderRadius: "5px" }}
+                />
+              </Box>
+            )}
+            {!thumbnail && (
+              <Skeleton variant="rounded" width={70} height={70} />
+            )}
             <div>
-              {subheading && <h6 className="text-[#6F6F6F]">{subheading}</h6>}
-              <div className="pt-1">
-                <h4 className="font-bold">{title}</h4>
-                {subtitle && <h6 className="text-[#6F6F6F]">{subtitle}</h6>}
-              </div>
+              {subheading && <h6 style={{ color: "#6F6F6F" }}>{subheading}</h6>}
+              <Box sx={{ paddingTop: "1px" }}>
+                <h4 style={{ fontWeight: "bold" }}>{title}</h4>
+                {subtitle && <h6 style={{ color: "#6F6F6F" }}>{subtitle}</h6>}
+              </Box>
             </div>
-          </div>
-          <div className="flex gap-[12px] ">
-            <div className="flex justify-center items-center pt-[15%]">
+          </Box>
+          <Box sx={{ display: "flex", gap: "12px" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                paddingTop: "10%",
+              }}
+            >
               <Button
                 sx={{
                   boxShadow: "none",
@@ -68,23 +82,30 @@ export const ItemBox: React.FC<ItemBoxProps> = ({
                   padding: "4px 16px",
                   backgroundColor: "#37ABEB",
                   color: "white",
+                  "&:hover": {
+                    boxShadow: "1px 1px 5px 0px rgba(0,0,0,0.2)"
+                  }
                 }}
                 variant="contained"
                 onClick={onAction}
               >
                 {buttonText}
               </Button>
-            </div>
-            <div className="mt-[-5%]">
-              <CloseIcon
-                sx={{ color: "#999999", width: "16px", height: "16px" }}
-                className="cursor-pointer"
-                onClick={onRemove}
-              />
-            </div>
-          </div>
-        </div>
+            </Box>
+            <IoClose
+              onClick={onRemove}
+              style={{
+                width: "15px",
+                height: "15px",
+                cursor: "pointer",
+                color: "gray",
+              }}
+            />
+          </Box>
+        </Box>
       </Box>
     </div>
   );
 };
+
+export default ItemBox;

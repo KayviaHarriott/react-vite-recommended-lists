@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import { RecommendedList } from "./components/RecommendedList";
-
+import RecommendedList from "./components/RecommendedList";
+import React from "react";
 function App() {
   const [list] = useState([
     {

@@ -1,7 +1,9 @@
+"use client";
 import { useState } from "react";
-import { ItemBox } from "./ItemBox";
+import ItemBox from "./ItemBox";
 import { motion } from "framer-motion";
 import { Box } from "@mui/material";
+import React from "react";
 
 interface RecommendedListProps {
   title?: string;
@@ -12,7 +14,7 @@ interface RecommendedListProps {
     thumbnail?: string;
   }[];
   buttonText: string;
-  buttonAction: () => void;
+  buttonAction?: () => void;
 }
 
 export const RecommendedList: React.FC<RecommendedListProps> = ({
@@ -33,13 +35,17 @@ export const RecommendedList: React.FC<RecommendedListProps> = ({
   };
 
   const handleButtonAction = (index: number) => {
-    buttonAction();
+    if (buttonAction) {
+      buttonAction();
+    }
     handleRemove(index);
   };
 
+
+
   return (
     <div>
-      {title && <p className="font-bold pb-4">{title}</p>}
+      {title && <p style={{paddingBottom: "8px", fontWeight: "bold"}}>{title}</p>}
       {updatedItems.length > 0 ? (
         updatedItems.map(
           (item, index) =>
@@ -49,9 +55,9 @@ export const RecommendedList: React.FC<RecommendedListProps> = ({
                 initial={{ opacity: 1 }}
                 animate={{ opacity: fadingOutIndex === index ? 0 : 1 }}
                 transition={{ duration: 0.5 }} // Fade-out duration
-                className="mb-[-1px]"
+                style={{marginBottom: "-1px"}}
               >
-                <ItemBox
+                <ItemBox 
                   subheading={item.subheading}
                   title={item.title}
                   subtitle={item.subtitle}
@@ -72,11 +78,13 @@ export const RecommendedList: React.FC<RecommendedListProps> = ({
             borderRadius: "5px",
           }}
         >
-          <p className="text-center font-bold text-[#868686] py-[16px]">
-            No more items to show.
+          <p style={{textAlign: "center", color: "#868686", padding: "16px 8px"}}>
+            No items to show.
           </p>
         </Box>
       )}
     </div>
   );
 };
+
+export default RecommendedList;
