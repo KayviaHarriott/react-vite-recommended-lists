@@ -41,11 +41,11 @@ export const RecommendedList: React.FC<RecommendedListProps> = ({
     handleRemove(index);
   };
 
-
-
   return (
     <div>
-      {title && <p style={{paddingBottom: "8px", fontWeight: "bold"}}>{title}</p>}
+      {title && (
+        <p style={{ paddingBottom: "8px", fontWeight: "bold" }}>{title}</p>
+      )}
       {updatedItems.length > 0 ? (
         updatedItems.map(
           (item, index) =>
@@ -55,9 +55,9 @@ export const RecommendedList: React.FC<RecommendedListProps> = ({
                 initial={{ opacity: 1 }}
                 animate={{ opacity: fadingOutIndex === index ? 0 : 1 }}
                 transition={{ duration: 0.5 }} // Fade-out duration
-                style={{marginBottom: "-1px"}}
+                style={{ marginBottom: "-1px" }}
               >
-                <ItemBox 
+                <ItemBox
                   subheading={item.subheading}
                   title={item.title}
                   subtitle={item.subtitle}
@@ -78,7 +78,13 @@ export const RecommendedList: React.FC<RecommendedListProps> = ({
             borderRadius: "5px",
           }}
         >
-          <p style={{textAlign: "center", color: "#868686", padding: "16px 8px"}}>
+          <p
+            style={{
+              textAlign: "center",
+              color: "#868686",
+              padding: "16px 8px",
+            }}
+          >
             No items to show.
           </p>
         </Box>
