@@ -7,10 +7,12 @@ The Recommended List App is a React application designed to display a list of it
 
 You can find a demo of it here on [Netlify](https://react-vite-recommended-lists.netlify.app) or [CodePen](https://codepen.io/KayviaHarriott/pen/OJewxEP)
 
+**_(NOTE: As of Aug-28-2024, the links for demo and previews are broken and being reloaded as package is updated)_**
 
 Here’s an example of how the component looks:
 
 ![Recommended List App Screenshot](https://raw.githubusercontent.com/KayviaHarriott/react-vite-recommended-lists/main/public/imgs/sample.gif)
+
 
 
 
