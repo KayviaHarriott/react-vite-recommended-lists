@@ -49,7 +49,7 @@ export const ItemBox: React.FC<ItemBoxProps> = ({
                 <img
                   src={thumbnail}
                   alt="text"
-                  style={{ borderRadius: "5px" }}
+                  style={{ borderRadius: "5px", width: "70px", height: "70px" }}
                 />
               </Box>
             )}
