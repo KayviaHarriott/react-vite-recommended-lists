@@ -1,9 +1,9 @@
 # react-vite-recommended-lists
 
-## About the Package
+## About the Package 👋
 The Recommended List App is a React application designed to display a list of items with interactive components. Each item is displayed in a card format, featuring a thumbnail image, a title, subtitle, and a button to perform an action. Users can also remove items from the list. This app showcases the use of React hooks, Material-UI components, and basic state management.
 
-## Demos & Previews
+## Demos & Previews 📹
 
 You can find a demo of it here on [Netlify](https://react-vite-recommended-lists.netlify.app) or [CodePen](https://codepen.io/KayviaHarriott/pen/OJewxEP)
 
@@ -28,7 +28,7 @@ or
 yarn add react-vite-recommended-lists
 ```
 
-## How to Use
+## How to Use 📖
 
 To use this package in your React repo, you'll first have to install the package (as shown above). Then follow the steps below:
 
